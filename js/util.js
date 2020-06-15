@@ -1,0 +1,7 @@
+/*
+ * Copyright (c) 2016 ~ 2017. Boston Information Processing LLC - All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited Proprietary and confidential.
+ * Written by Yiyu Jia <yiyu.jia@BostonInfoPro.com>,  January 2016
+ */
+
+!function(n,t){var e=function(){var t={},e=function(n,e){if(!t[n]){var o=n;$.ajax({url:o,method:"GET",async:!1,success:function(e){t[n]=e}})}return t[n]},o=function(n,t,e){return $.isFunction(t)&&(e=t,t=null),$.ajax({type:"GET",url:n,data:t,success:e,dataType:"json",async:!1})},r=function(n){return function(t,e){var o;o=[],substrRegex=new RegExp(t,"i"),$.each(n,function(n,t){substrRegex.test(t)&&o.push(t)}),e(o)}},c=function(n,t,e){var o=document.getElementById(t);"srcObject"in o?(o.srcObject=n,console.log(o.paused),o.play()):o.src=URL.createObjectURL(n),e&&e(n)},a=function(n,t,e){t=t||"",e=e||512;for(var o=atob(n),r=[],c=0;c<o.length;c+=e){for(var a=o.slice(c,c+e),u=new Array(a.length),i=0;i<a.length;i++)u[i]=a.charCodeAt(i);var s=new Uint8Array(u);r.push(s)}return new Blob(r,{type:t})},u=function(){n.location.hash="login"},i=function(){n.location.hash=""},s=function(){n.location.hash="notfound"},l=function(n,t){var e,o,r=n;setInterval(function(){e=parseInt(r/60,10),o=parseInt(r%60,10),e=e<10?"0"+e:e,o=o<10?"0"+o:o,t.text(e+":"+o),--r<0&&(r=0)},1e3)};return{loadTemplateSync:function(n,t){return e(n)},loadJsonSync:function(n,t,e){return o(n,t,e)},substringMatcher:r,showStreamAtVideoElement:c,b64toBlob:a,redirectToLogin:u,redirectToHome:i,tonotfound:s,startTimer:l}};n.util=new e}(window);

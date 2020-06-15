@@ -1,0 +1,5 @@
+{
+  "env" : "dev",
+  "api" : "http://localhost:8088",
+  "logLevel": "DEBUG"
+}
